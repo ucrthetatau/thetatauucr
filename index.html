@@ -370,7 +370,6 @@ var STYLE_PREFIX = 'wsite';
                 >
                 Login
             </a>
-
         </li> -->
 </ul>
 </div>
@@ -642,7 +641,6 @@ var STYLE_PREFIX = 'wsite';
                                 >
                                 Login
                             </a>
-
                         </li> -->
                 </ul>
             </div>
@@ -721,37 +719,115 @@ var STYLE_PREFIX = 'wsite';
 <a>
     <table class="wsite-multicol-table">
     <tr class="wsite-multicol-tr">
-                    <td class="wsite-multicol-col" style="width:100%; padding:0px;">
+                    <td class="wsite-multicol-col" style="width:260%; padding:0px;">
+        <div><div class="wsite-image wsite-image-border-none " style="padding-top:0px;padding-bottom:0px;margin-left:0;margin-right:0;text-align:center">
+
+            <!-- javascript for pie charts -->
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+            <script type="text/javascript">
+            // Load google charts
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawYearChart);
+            google.charts.setOnLoadCallback(drawMajorChart);
+            google.charts.setOnLoadCallback(drawGenderChart);
+
+            // Draw the chart and set the chart values
+            function drawYearChart() {
+            var data = google.visualization.arrayToDataTable([
+            ['Year', 'Number of People'],
+            ['2nd', 3],
+            ['3rd', 9],
+            ['4th', 12],
+            ['5th', 3],
+            ]   );
+
+         var options = {
+        'width':500, 'height':350,
+         colors: ['#cd5c5c', '#7c0a02', '#a52a2a', '#f3b49f', '#cc3333']
+         };
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('drawYearChart'));
+  chart.draw(data, options, {fontName:'Roboto'});
+}
+
+                // chart 2
+
+        function drawMajorChart() {
+          var data = google.visualization.arrayToDataTable([
+          ['Major', 'Number of People'],
+          ['CS', 4],
+          ['ME', 9],
+          ['CSBA', 4],
+          ['BIEN', 5],
+          ['MSE', 1],
+          ['CHEME', 3],
+          ['ENVE', 1],
+        ]);
+        
+        
+          var options = {
+          'width':500, 'height':350,
+          colors: ['#ffcc33', '#e5b73b', '#da9100', '#996515', '#faf0be', '#f3e5ab', '#f8de7e']
+          };
+        
+          // Display the chart inside the <div> element with id="piechart"
+          var chart = new google.visualization.PieChart(document.getElementById('drawMajorChart'));
+          chart.draw(data, options, {fontName:'Roboto'});
+        }
 
 
+    // chart 3
+        function drawGenderChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['Gender', 'Number of People'],
+        ['Female', 11],
+        ['Male', 16],
+        ]);
 
+        var options = {
+        'width':500, 'height':350,
+        colors: ['#989898', '#dcdcdc']
+        };
+
+    // Display the chart inside the <div> element with id="piechart"
+        var chart = new google.visualization.PieChart(document.getElementById('drawGenderChart'));
+         chart.draw(data, options, {fontName:'Roboto'});
+        }
+</script>
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:0px;padding-bottom:0px;margin-left:0;margin-right:0;text-align:center">
+    <a>
+        <h2 class="wsite-content-title" style="text-align:center;"><font size="4" color="#3f3f3f">Year</font></h2>
+        <div id="drawYearChart" style="width:auto;max-width:100%"></div>
+    </a>
+    </div></div>
+</td>                <td class="wsite-multicol-col" style="width:276%; padding:0px;">
     <div><div class="wsite-image wsite-image-border-none " style="padding-top:0px;padding-bottom:0px;margin-left:0;margin-right:0;text-align:center">
-        <a>
-            <h2 class="wsite-content-title" style="text-align:center;"><font size="4" color="#3f3f3f">Year</font></h2>
-            <img src="uploads/2/5/7/9/25793388/year.png" alt="element_settings.Image+Text_94464494.default" style="width:auto;max-width:100%" />
-        </a>
-        </div></div>
-    </td>                <td class="wsite-multicol-col" style="width:120%; padding:0px;">
+
+    <a>
+    <h2 class="wsite-content-title" style="text-align:center;"><font size="4" color="#3f3f3f">Major</font></h2>
+    <div id="drawMajorChart" style="width:auto;max-width:100%"></div> 
+    </a>
+    </div></div>
+    </td>
+    <td class="wsite-multicol-col" style="width:180%; padding:0px;">
         <div><div class="wsite-image wsite-image-border-none " style="padding-top:0px;padding-bottom:0px;margin-left:0;margin-right:0;text-align:center">
 
         <a>
-        <h2 class="wsite-content-title" style="text-align:center;"><font size="4" color="#3f3f3f">Major</font></h2>
-        <img src="uploads/2/5/7/9/25793388/major.png" alt="element_settings.Image+Text_94464494.default" style="width:auto;max-width:100%" />
+        <h2 class="wsite-content-title" style="text-align:center;"><font size="4" color="#3f3f3f">Gender</font></h2>
+        <div id="drawGenderChart" style="width:auto;max-width:100%"></div>
         </a>
         </div></div>
-        </td>
-        <td class="wsite-multicol-col" style="width:95%; padding:0px;">
-            <div><div class="wsite-image wsite-image-border-none " style="padding-top:20px;padding-bottom:0px;margin-left:0;margin-right:0;text-align:center">
+    </td>
+    <td class="wsite-multicol-col" style="width:10%; padding:0px;">
+        <div><div class="wsite-image wsite-image-border-none " style="padding-top:0px;padding-bottom:0px;margin-left:0;margin-right:0;text-align:center">
 
-            <a>
-            <h2 class="wsite-content-title" style="text-align:center;"><font size="4" color="#3f3f3f">Gender</font></h2>
-            <img src="uploads/2/5/7/9/25793388/gender.png" alt="element_settings.Image+Text_94464494.default" style="width:auto;max-width:100%" />
-            </a>
-            </div></div>
+
         </tr>
-    </table>
+</table>
 </a>
-
 
             </div>
         </div>
